@@ -50,7 +50,7 @@ class IMaGE(object):
 
     def cut(self,image,**args):
         for i in args.keys():
-            print "{} : {}".format(i,args[i])
+            print("{} : {}".format(i,args[i])) # python 3.x +
 
         M = image[int(args["y0"]):int(args["y1"]),int(args["x0"]):int(args["x1"])]
         self.M_out = 0.299*M[:,:,0] + 0.589*M[:,:,1]+0.114*M[:,:,2]
@@ -119,7 +119,7 @@ if __name__ == "__main__":
 	plt.figure()
 	plt.title("Testing Image")
 	plt.xlabel(r'M') ; plt.ylabel(r'N')
-	im = plt.imread("MTF/images/prueba.png")
+	im = plt.imread("./images/prueba.png") #relative path
 	a = IMaGE(fit = True)
 
 	plt.imshow(im,cmap = "gray")
